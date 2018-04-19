@@ -14,6 +14,7 @@ public class Test {
 ////        System.out.println(printerService.getPrinters());
 ////        //print some stuff
 ////        printerService.printString("80mm Series Printer", stuffToPrint());
+////        printerService.printString("Portable Printer DPP-250", stuffToPrint());
 ////        // cut that paper!
 ////        byte[] cutP = new byte[]{0x1d, 'V', 1};
 ////        printerService.printBytes("80mm Series Printer", cutP);

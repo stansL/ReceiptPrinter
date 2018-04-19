@@ -41,37 +41,60 @@ public class Ticket {
     //Ticket attribute content
     private String contentTicket =
                     "        ***** START OF LEGAL RECEIPT ***** \n" +
-                    "               MERU SAFI DISHES \n" +
+                    "                  LAZARUS HOTEL \n" +
                     "           REGISTER NO: KE0001311460375\n" +
-                    "           P.O.BOX 195 MERU, KENYA.\n" +
-                    "          EMAIL: SAFIDISHES@GMAIL.COM\n" +
-                    "                  VAT: 1538446C\n" +
-                    "               PIN NO: A002256972P\n\n" +
+                    "           P.O.BOX 1852 NAIROBI, KENYA.\n" +
+                    "          EMAIL: HOTELLAZURUS@GMAIL.COM\n" +
+                    "                  VAT: 7428426K\n" +
+                    "               PIN NO: A001156972W\n\n" +
 
 //                    "USR NO: 0002            KRA/EFP/010522013/20257B\n" +
-                    "USR NO: 0002            KRA/ETR/26952009/20283k\n" +
-                    String.format("TILL #: %-15s %s", "01", "CASH SALE #: 190\n") +
-                    String.format("DATE  : %-15s %s", "25-JAN-18", "TIME:  08:02 PM\n") +
+                    "USR NO: 0004            KRA/ETR/21652009/20983T\n" +
+                    String.format("TILL #: %-15s %s", "04", "CASH SALE #: 512\n") +
+                    String.format("DATE  : %-15s %s", "06-APR-18", "TIME:  10:21 PM\n") +
 
-                    "================================================\n" +
+                    "************************************************\n" +
                     String.format("%-25s %5s %7s %7s\n", "Item", "Qty", "Price", "Amount") +
-                    "================================================\n\n" +
+                    "************************************************\n\n" +
                     "toreplace" +
-                    "================================================\n" +
-                    String.format("%-23s %20s\n", "TOTAL:", "TT") +
-                    String.format("%-23s %20s\n", "CASH:", "CC") +
-                    String.format("%-23s %20s\n", "CHANGE:", "XX") +
-                    "================================================\n" +
-                    "PRICES INCLUSIVE OF VAT WHERE APPLICABLE";
+                    "************************************************\n" +
+                    String.format("%-22s %20s\n", "TOTAL:", "TT") +
+                    String.format("%-22s %20s\n", "CASH:", "CC") +
+                    String.format("%-22s %20s\n", "CHANGE:", "XX") +
+                    "************************************************\n" ;
+
+//    private String contentTicket =
+//            "        ***** START OF LEGAL RECEIPT ***** \n" +
+//                    "               MERU SAFI DISHES \n" +
+//                    "           REGISTER NO: KE0001311460375\n" +
+//                    "           P.O.BOX 195 MERU, KENYA.\n" +
+//                    "          EMAIL: SAFIDISHES@GMAIL.COM\n" +
+//                    "                  VAT: 1538446C\n" +
+//                    "               PIN NO: A002256972P\n\n" +
+//
+////                    "USR NO: 0002            KRA/EFP/010522013/20257B\n" +
+//                    "USR NO: 0003            KRA/ETR/26952009/20283K\n" +
+//                    String.format("TILL #: %-15s %s", "02", "CASH SALE #: 365\n") +
+//                    String.format("DATE  : %-15s %s", "05-APR-18", "TIME:  09:21 PM\n") +
+//
+//                    "================================================\n" +
+//                    String.format("%-25s %5s %7s %7s\n", "Item", "Qty", "Price", "Amount") +
+//                    "================================================\n\n" +
+//                    "toreplace" +
+//                    "================================================\n" +
+//                    String.format("%-22s %20s\n", "TOTAL:", "TT") +
+//                    String.format("%-22s %20s\n", "CASH:", "CC") +
+//                    String.format("%-22s %20s\n", "CHANGE:", "XX") +
+//                    "================================================\n" ;
 
     //El constructor que setea los valores a la instancia
     Ticket(String regnumber, String nameLocal, String expedition, String box, String ticket, String caissier, String dateTime, String subTotal, String tax, String total, String recibo, String change) {
         List<Item> items = new ArrayList<Item>();
-        double cashInHand = 1000;
-        items.add(new Item("JH201", "Cocktail Juice", 1, 220));
-        items.add(new Item("JH201", "Chapati", 1, 50));
-        items.add(new Item("FF093", "1 Ltre Fresh Water", 1, 150));
-        items.add(new Item("GC234", "Fish Stew", 1, 550));
+        double cashInHand = 2500;
+        items.add(new Item("JH201", "Coconut Fish", 1, 650));
+        items.add(new Item("FF093", "1.5 Ltrs Water", 2, 250));
+        items.add(new Item("FF093", "Chicken Curry", 1, 650));
+        items.add(new Item("JH201", "Fruit Salad", 2, 280));
 
         String toreplace = getToReplace(items);
         this.contentTicket = this.contentTicket.replace("toreplace", toreplace);
